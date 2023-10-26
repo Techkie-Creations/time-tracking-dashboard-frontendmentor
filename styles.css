@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: hsl(226, 43%, 10%);
+	font-size: 18px;
+	font-family: Rubik, sans-serif;
+}
+
+.main {
+	width: 90%;
+	margin: 5rem auto 3rem auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-areas:
+		"profile work play study"
+		"profile exercise social sc";
+	gap: 2rem;
+}
+
+.profile {
+	grid-area: profile;
+	background-color: hsl(235, 46%, 20%);
+}
+
+.profile .id {
+	background-color: hsl(246, 80%, 60%);
+	height: 70%;
+	padding: 2rem;
+	color: white;
+}
+
+.profile .id .avatar {
+	width: 6rem;
+	border: 0.3rem solid white;
+	border-radius: 50%;
+	margin-bottom: 3rem;
+}
+
+.profile .id h1 {
+	font-size: calc(100% * 2.5);
+	width: 100%;
+	font-weight: 300;
+	transition: font-size 1s;
+}
+
+.profile .id h1,
+.profile .id p {
+	margin: 0;
+}
+
+.profile .timestamps {
+	padding: 0;
+	color: white;
+}
+
+.profile .timestamps ul {
+	padding: 0;
+	width: 100%;
+}
+
+.profile .timestamps ul li {
+	list-style: none;
+	padding: 0.6rem 2rem;
+	width: 100%;
+	cursor: pointer;
+	border-radius: 0.7rem;
+}
+
+.profile .timestamps ul li.chosen {
+	color: white;
+}
+
+.profile .timestamps ul li:hover {
+	color: white;
+}
+
+.profile .timestamps ul li:active {
+	scale: 0.9;
+	box-shadow: inset 0 0 3px black;
+}
+
+.profile .id .detail p,
+.profile .timestamps ul li,
+.stat .inner .bottom .back {
+	color: hsl(236, 100%, 87%);
+}
+
+.stat {
+	position: relative;
+	margin-bottom: 0;
+	cursor: pointer;
+}
+
+.stat.work {
+	background-color: hsl(15, 100%, 70%);
+	border-top: 3rem solid hsl(15, 100%, 70%);
+	grid-area: work;
+}
+
+.stat.play {
+	background-color: hsl(195, 74%, 62%);
+	border-top: 3rem solid hsl(195, 74%, 62%);
+	grid-area: play;
+}
+
+.stat.study {
+	background-color: hsl(348, 100%, 68%);
+	border-top: 3rem solid hsl(348, 100%, 68%);
+	grid-area: study;
+}
+
+.stat.exercise {
+	background-color: hsl(145, 58%, 55%);
+	border-top: 3rem solid hsl(145, 58%, 55%);
+	grid-area: exercise;
+}
+
+.stat.social {
+	background-color: hsl(264, 64%, 52%);
+	border-top: 3rem solid hsl(264, 64%, 52%);
+	grid-area: social;
+}
+
+.stat.sc {
+	background-color: hsl(43, 84%, 65%);
+	border-top: 3rem solid hsl(43, 84%, 65%);
+	grid-area: sc;
+}
+
+.stat .icon {
+	width: 6rem;
+	margin: 0;
+	position: absolute;
+	z-index: 0;
+	right: 1rem;
+	top: -3rem;
+}
+
+.stat .inner {
+	background-color: hsl(235, 46%, 20%);
+	color: white;
+	margin: 0;
+	padding: 2rem;
+	position: relative;
+	z-index: 3;
+}
+
+.stat .inner:hover {
+	opacity: 0.9 !important;
+}
+
+.stat .inner .top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.stat .inner .top h3 {
+	margin: 0;
+}
+
+.stat .inner .top svg {
+	cursor: pointer;
+}
+
+.stat .inner .top svg path:hover {
+	fill: white;
+}
+
+.stat .inner .bottom .hours {
+	font-size: 3rem;
+	margin: 0.7rem 0;
+	font-weight: 300;
+	transition: font-size 1s;
+}
+
+.profile,
+.profile .id,
+.stat,
+.stat .inner {
+	border-radius: 1rem;
+}
+
+.attribution {
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+}
+
+.attribution a {
+	text-decoration: none;
+	color: hsl(236, 100%, 87%);
+}
+
+.attribution a:hover {
+	color: darkred;
+}
+
+.attribution p {
+	font-weight: 700;
+}
+
+@media screen and (max-width: 860px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.profile .id {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+		padding: 2rem 0.7rem;
+		width: 100%;
+	}
+
+	.profile .id .avatar {
+		margin: 0;
+	}
+
+	.profile .id .detail {
+		width: 100%;
+	}
+
+	.profile .id h1 {
+		font-size: calc(100% * 1.5);
+		width: 100%;
+	}
+
+	.profile .timestamps ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
+		padding: 0;
+	}
+
+	.profile .timestamps ul li {
+		width: auto;
+	}
+
+	.stat .inner .bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.stat .inner .bottom .hours {
+		font-size: 2rem;
+	}
+}
